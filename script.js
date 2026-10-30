@@ -58,4 +58,81 @@ function renderizarBoletim() {
   let somaMediasGerais = 0;
   let qtdDisciplinasComMedia = 0;
   let totalFaltasGeral = 0;
-  let qtd
+  let qtdBomDesempenho = 0;
+  let qtdAtencao = 0;
+
+  // Passa por cada disciplina do array usando o forEach
+  dadosBrutos.forEach((item) => {
+    // Normaliza as notas dos 3 trimestres
+    const n1 = normalizarNota(item.tri1);
+    const n2 = normalizarNota(item.tri2);
+    const n3 = normalizarNota(item.tri3);
+
+    // Calcula a soma e conta quantas notas existem
+    let somaNotas = 0;
+    let qtdNotas = 0;
+
+    [n1, n2, n3].forEach((nota) => {
+      if (nota !== null) {
+        somaNotas += nota;
+        qtdNotas++;
+      }
+    });
+
+    // Calcula a média da disciplina (somente com as notas disponíveis)
+    let media = null;
+    let situacao = "Nota ainda não disponível";
+    let classeSituacao = "situacao-indisponivel";
+
+    if (qtdNotas > 0) {
+      media = somaNotas / qtdNotas;
+      somaMediasGerais += media;
+      qtdDisciplinasComMedia++;
+
+      if (media >= 6.0) {
+        situacao = "Bom desempenho";
+        classeSituacao = "situacao-bom";
+        qtdBomDesempenho++;
+      } else {
+        situacao = "Atenção";
+        classeSituacao = "situacao-atencao";
+        qtdAtencao++;
+      }
+    }
+
+    // Somar as faltas dos trimestres
+    const totalFaltasDisciplina = item.faltas.reduce((acc, f) => acc + f, 0);
+    totalFaltasGeral += totalFaltasDisciplina;
+
+    // Formatação de exibição das notas para a tabela
+    const txt1 = n1 !== null ? n1.toFixed(1).replace(".", ",") : "—";
+    const txt2 = n2 !== null ? n2.toFixed(1).replace(".", ",") : "—";
+    const txt3 = n3 !== null ? n3.toFixed(1).replace(".", ",") : "—";
+    const txtMedia = media !== null ? media.toFixed(1).replace(".", ",") : "—";
+
+    // Criar a linha na tabela HTML
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><strong>${item.disciplina}</strong></td>
+      <td>${txt1}</td>
+      <td>${txt2}</td>
+      <td>${txt3}</td>
+      <td><strong>${txtMedia}</strong></td>
+      <td>${totalFaltasDisciplina}</td>
+      <td><span class="${classeSituacao}">${situacao}</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Atualizar os Cards de Resumo na página
+  const mediaGeralFinal = qtdDisciplinasComMedia > 0 ? (somaMediasGerais / qtdDisciplinasComMedia).toFixed(1).replace(".", ",") : "—";
+
+  document.getElementById("card-media-valor").innerText = mediaGeralFinal;
+  document.getElementById("card-faltas-valor").innerText = totalFaltasGeral;
+  document.getElementById("card-frequencia-valor").innerText = FREQUENCIA_DEMONSTRATIVA;
+  document.getElementById("card-bom-desempenho").innerText = qtdBomDesempenho;
+  document.getElementById("card-atencao-valor").innerText = qtdAtencao;
+}
+
+// Executa a função assim que a página carrega
+renderizarBoletim();
