@@ -1,2 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boletim Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-meu boletim
+  <div class="container">
+    <!-- Cabeçalho principal -->
+    <header class="header">
+      <h1>Boletim Digital</h1>
+      <p class="subtitulo">9º Ano &bull; Estudante Exemplo</p>
+    </header>
+
+    <!-- Cards de Resumo -->
+    <section class="cards-grid">
+      <div class="card card-media">
+        <h3>Média Geral</h3>
+        <p id="card-media-geral" class="card-valor">—</p>
+      </div>
+
+      <div class="card card-faltas">
+        <h3>Total de Faltas</h3>
+        <p id="card-total-faltas" class="card-valor">—</p>
+      </div>
+
+      <div class="card card-bom">
+        <h3>Bom Desempenho</h3>
+        <p id="card-bom-desempenho" class="card-valor">—</p>
+      </div>
+
+      <div class="card card-atencao">
+        <h3>Precisa de Atenção</h3>
+        <p id="card-atencao" class="card-valor">—</p>
+      </div>
+
+      <div class="card card-frequencia">
+        <h3>Frequência Geral</h3>
+        <p id="card-frequencia" class="card-valor">92%</p>
+        <span class="subtext-card">Frequência adequada</span>
+      </div>
+    </section>
+
+    <!-- Tabela de Disciplinas -->
+    <main class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>1º Tri</th>
+            <th>2º Tri</th>
+            <th>3º Tri</th>
+            <th>Média</th>
+            <th>Faltas</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-boletim">
+          <!-- As linhas com as disciplinas serão inseridas aqui pelo JavaScript -->
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

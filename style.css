@@ -1,1 +1,151 @@
+/* Configuração geral da página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+body {
+    background-color: #f7f5ff; /* Fundo roxo bem suave */
+    color: #4a4a4a;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); /* Degradê roxo e azul pastel */
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Leve sombreamento */
+}
+
+header h1 {
+    color: #4a3e6d;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    color: #5c5c8a;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Cards de Resumo */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Leve sombreamento pedida por você */
+    text-align: center;
+    border-top: 5px solid #d4a5ffa0;
+}
+
+/* Bordas pastel nos cards */
+.card-media { border-top-color: #b5ead7; } /* Verde pastel */
+.card-faltas { border-top-color: #ffb7b2; } /* Rosa pastel */
+.card-frequencia { border-top-color: #e2f0cb; } /* Amarelo/Verde pastel */
+.card-destaque { border-top-color: #c7ceea; } /* Azul pastel */
+.card-atencao { border-top-color: #ffdac1; } /* Laranja pastel */
+
+.card h3 {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.card-valor {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.status-tag {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    background-color: #e2f0cb;
+    color: #4d7c0f;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+/* Tabela Responsiva */
+.tabela-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    overflow-x: auto; /* Permite rolar pro lado em telas de celular */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+th {
+    background-color: #fff1f5; /* Rosa pastel bem clarinho */
+    color: #6b5b95;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #fcf8ff; /* Destaque suave ao passar o mouse */
+}
+
+/* Situações das notas */
+.situacao-bom {
+    color: #2b8a3e;
+    font-weight: bold;
+    background-color: #d3f9d8;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.situacao-atencao {
+    color: #e67700;
+    font-weight: bold;
+    background-color: #fff3bf;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.situacao-indisponivel {
+    color: #868e96;
+    font-style: italic;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+    th, td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
