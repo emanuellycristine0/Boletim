@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,53 +12,74 @@
     <header class="header">
       <h1>✨ Boletim Digital ✨</h1>
       <p class="subtitle">9º Ano - Ensino Fundamental</p>
-      <p class="student-info">Estudante: <span>Estudante Exemplo</span></p>
+      <p class="student-info">Turma: <span>9B</span> | Chamada: <span>12</span></p>
     </header>
 
-    <!-- Cards de Resumo Superior -->
-    <section class="summary-cards">
-      <div class="card">
-        <h3>Média Geral</h3>
-        <p id="card-media" class="card-value">—</p>
+    <!-- Tela de Acesso (PIN) -->
+    <section id="secao-login" class="card login-card">
+      <h3>Acesso ao Boletim</h3>
+      <p class="login-info">Informe seu PIN para visualizar e editar suas notas.</p>
+      <div class="login-form">
+        <input type="password" id="input-pin" placeholder="Digite seu PIN" maxlength="20" autocomplete="off">
+        <button id="btn-entrar" type="button">Entrar</button>
       </div>
-      <div class="card">
-        <h3>Total de Faltas</h3>
-        <p id="card-faltas" class="card-value">—</p>
-      </div>
-      <div class="card">
-        <h3>Bom Desempenho</h3>
-        <p id="card-bom-desempenho" class="card-value">—</p>
-      </div>
-      <div class="card">
-        <h3>Atenção</h3>
-        <p id="card-atencao" class="card-value">—</p>
-      </div>
-      <div class="card card-sparkle">
-        <h3>Frequência</h3>
-        <p id="card-frequencia" class="card-value">92%</p>
-        <span class="subtext">Frequência adequada</span>
-      </div>
+      <p id="msg-login" class="msg-status"></p>
     </section>
 
-    <!-- Tabela de Disciplinas -->
-    <section class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Disciplina</th>
-            <th>1º Tri</th>
-            <th>2º Tri</th>
-            <th>3º Tri</th>
-            <th>Média</th>
-            <th>Faltas</th>
-            <th>Situação</th>
-          </tr>
-        </thead>
-        <tbody id="tabela-boletim">
-          <!-- As linhas com as disciplinas serão inseridas aqui via JavaScript -->
-        </tbody>
-      </table>
-    </section>
+    <!-- Conteúdo do Boletim (Oculto até o login) -->
+    <main id="conteudo-boletim" style="display: none;">
+      <!-- Painel de Ações -->
+      <div class="actions-bar">
+        <button id="btn-alternar-edicao" type="button" class="btn-primary">Alterar dados</button>
+        <button id="btn-salvar" type="button" class="btn-success" style="display: none;">Salvar alterações</button>
+        <span id="msg-salvamento" class="msg-status"></span>
+      </div>
+
+      <!-- Cards de Resumo Superior -->
+      <section class="summary-cards">
+        <div class="card">
+          <h3>Média Geral</h3>
+          <p id="card-media" class="card-value">—</p>
+        </div>
+        <div class="card">
+          <h3>Total de Faltas</h3>
+          <p id="card-faltas" class="card-value">—</p>
+        </div>
+        <div class="card">
+          <h3>Bom Desempenho</h3>
+          <p id="card-bom-desempenho" class="card-value">—</p>
+        </div>
+        <div class="card">
+          <h3>Atenção</h3>
+          <p id="card-atencao" class="card-value">—</p>
+        </div>
+        <div class="card card-sparkle">
+          <h3>Frequência</h3>
+          <p id="card-frequencia" class="card-value">92%</p>
+          <span class="subtext">Frequência adequada</span>
+        </div>
+      </section>
+
+      <!-- Tabela de Disciplinas -->
+      <section class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-boletim">
+            <!-- As linhas com as disciplinas serão inseridas aqui via JavaScript -->
+          </tbody>
+        </table>
+      </section>
+    </main>
   </div>
 
   <script src="script.js"></script>
