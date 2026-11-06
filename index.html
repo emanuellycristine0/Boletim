@@ -1,51 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boletim Digital</title>
+  <title>Boletim Digital - 9º Ano</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="container">
-    <!-- Cabeçalho principal -->
+    <!-- Cabeçalho do Boletim -->
     <header class="header">
-      <h1>Boletim Digital</h1>
-      <p class="subtitulo">9º Ano &bull; Estudante Exemplo</p>
+      <h1>✨ Boletim Digital ✨</h1>
+      <p class="subtitle">9º Ano - Ensino Fundamental</p>
+      <p class="student-info">Estudante: <span>Estudante Exemplo</span></p>
     </header>
 
-    <!-- Cards de Resumo -->
-    <section class="cards-grid">
-      <div class="card card-media">
+    <!-- Cards de Resumo Superior -->
+    <section class="summary-cards">
+      <div class="card">
         <h3>Média Geral</h3>
-        <p id="card-media-geral" class="card-valor">—</p>
+        <p id="card-media" class="card-value">—</p>
       </div>
-
-      <div class="card card-faltas">
+      <div class="card">
         <h3>Total de Faltas</h3>
-        <p id="card-total-faltas" class="card-valor">—</p>
+        <p id="card-faltas" class="card-value">—</p>
       </div>
-
-      <div class="card card-bom">
+      <div class="card">
         <h3>Bom Desempenho</h3>
-        <p id="card-bom-desempenho" class="card-valor">—</p>
+        <p id="card-bom-desempenho" class="card-value">—</p>
       </div>
-
-      <div class="card card-atencao">
-        <h3>Precisa de Atenção</h3>
-        <p id="card-atencao" class="card-valor">—</p>
+      <div class="card">
+        <h3>Atenção</h3>
+        <p id="card-atencao" class="card-value">—</p>
       </div>
-
-      <div class="card card-frequencia">
-        <h3>Frequência Geral</h3>
-        <p id="card-frequencia" class="card-valor">92%</p>
-        <span class="subtext-card">Frequência adequada</span>
+      <div class="card card-sparkle">
+        <h3>Frequência</h3>
+        <p id="card-frequencia" class="card-value">92%</p>
+        <span class="subtext">Frequência adequada</span>
       </div>
     </section>
 
     <!-- Tabela de Disciplinas -->
-    <main class="tabela-container">
+    <section class="table-container">
       <table>
         <thead>
           <tr>
@@ -59,10 +56,10 @@
           </tr>
         </thead>
         <tbody id="tabela-boletim">
-          <!-- As linhas com as disciplinas serão inseridas aqui pelo JavaScript -->
+          <!-- As linhas com as disciplinas serão inseridas aqui via JavaScript -->
         </tbody>
       </table>
-    </main>
+    </section>
   </div>
 
   <script src="script.js"></script>
