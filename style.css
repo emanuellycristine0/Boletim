@@ -1,151 +1,167 @@
-/* Configuração geral da página */
+/* Configurações Globais e Cores (Tema Rosé Gold & Princesa) */
+:root {
+  --rose-gold: #b76e79;
+  --rose-gold-glow: #e8b4b8;
+  --bg-color: #fff5f7; /* Rosa bem clarinho quase branco */
+  --card-bg: #ffffff;
+  --text-color: #4a3b40;
+  --border-color: #d8a7b1;
+  --status-good: #6baf8d;
+  --status-attention: #d9777f;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #f7f5ff; /* Fundo roxo bem suave */
-    color: #4a4a4a;
-    padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  line-height: 1.6;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 /* Cabeçalho */
-header {
-    text-align: center;
-    margin-bottom: 30px;
-    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); /* Degradê roxo e azul pastel */
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Leve sombreamento */
+.header {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #fff0f3 0%, #f7d6e0 100%);
+  border: 2px solid var(--rose-gold);
+  box-shadow: 0 4px 15px rgba(183, 110, 121, 0.2);
+  margin-bottom: 25px;
 }
 
-header h1 {
-    color: #4a3e6d;
-    font-size: 2.2rem;
-    margin-bottom: 8px;
+.header h1 {
+  font-size: 2.2rem;
+  color: var(--rose-gold);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-.subtitulo {
-    color: #5c5c8a;
-    font-size: 1.1rem;
-    font-weight: 600;
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #8c535d;
 }
 
-/* Cards de Resumo */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin-bottom: 30px;
+.student-info {
+  margin-top: 8px;
+  font-weight: 600;
 }
 
+/* Layout dos Cards de Resumo */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Design dos Blocks Retos com Brilho */
 .card {
-    background-color: #ffffff;
-    padding: 18px;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Leve sombreamento pedida por você */
-    text-align: center;
-    border-top: 5px solid #d4a5ffa0;
+  background-color: var(--card-bg);
+  border: 2px solid var(--rose-gold);
+  padding: 18px;
+  text-align: center;
+  box-shadow: 4px 4px 0px var(--rose-gold-glow), 0 0 10px rgba(183, 110, 121, 0.15);
+  transition: transform 0.2s ease;
 }
 
-/* Bordas pastel nos cards */
-.card-media { border-top-color: #b5ead7; } /* Verde pastel */
-.card-faltas { border-top-color: #ffb7b2; } /* Rosa pastel */
-.card-frequencia { border-top-color: #e2f0cb; } /* Amarelo/Verde pastel */
-.card-destaque { border-top-color: #c7ceea; } /* Azul pastel */
-.card-atencao { border-top-color: #ffdac1; } /* Laranja pastel */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 6px 0px var(--rose-gold), 0 0 15px rgba(183, 110, 121, 0.3);
+}
 
 .card h3 {
-    font-size: 0.95rem;
-    color: #777;
-    margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #7a4650;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.card-valor {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #333;
+.card-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--rose-gold);
 }
 
-.status-tag {
-    display: inline-block;
-    margin-top: 6px;
-    font-size: 0.8rem;
-    background-color: #e2f0cb;
-    color: #4d7c0f;
-    padding: 3px 8px;
-    border-radius: 10px;
+.subtext {
+  display: block;
+  font-size: 0.75rem;
+  color: #8c535d;
+  margin-top: 5px;
+  font-weight: 600;
 }
 
 /* Tabela Responsiva */
-.tabela-container {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    overflow-x: auto; /* Permite rolar pro lado em telas de celular */
+.table-container {
+  overflow-x: auto;
+  background-color: var(--card-bg);
+  border: 2px solid var(--rose-gold);
+  box-shadow: 5px 5px 0px var(--rose-gold-glow);
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
 }
 
 th, td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #f0f0f0;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f2d6dc;
 }
 
 th {
-    background-color: #fff1f5; /* Rosa pastel bem clarinho */
-    color: #6b5b95;
-    font-weight: 600;
+  background-color: #fce4e9;
+  color: #7a4650;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background-color: #fff9fa;
 }
 
 tr:hover {
-    background-color: #fcf8ff; /* Destaque suave ao passar o mouse */
+  background-color: #fcedf0;
 }
 
-/* Situações das notas */
+/* Estilos de Situação */
 .situacao-bom {
-    color: #2b8a3e;
-    font-weight: bold;
-    background-color: #d3f9d8;
-    padding: 4px 8px;
-    border-radius: 6px;
-    display: inline-block;
+  color: var(--status-good);
+  font-weight: bold;
 }
 
 .situacao-atencao {
-    color: #e67700;
-    font-weight: bold;
-    background-color: #fff3bf;
-    padding: 4px 8px;
-    border-radius: 6px;
-    display: inline-block;
+  color: var(--status-atencao);
+  font-weight: bold;
 }
 
 .situacao-indisponivel {
-    color: #868e96;
-    font-style: italic;
+  color: #888888;
+  font-style: italic;
 }
 
-/* Ajuste para celulares */
+/* Responsividade para Celulares */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.7rem;
-    }
-    th, td {
-        padding: 8px 10px;
-        font-size: 0.9rem;
-    }
+  body {
+    padding: 10px;
+  }
+  
+  .header h1 {
+    font-size: 1.6rem;
+  }
+  
+  th, td {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
 }
