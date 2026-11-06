@@ -141,13 +141,116 @@ tr:hover {
 }
 
 .situacao-atencao {
-  color: var(--status-atencao);
+  color: var(--status-attention);
   font-weight: bold;
 }
 
 .situacao-indisponivel {
   color: #888888;
   font-style: italic;
+}
+
+/* Tela de Login */
+.login-card {
+  max-width: 450px;
+  margin: 30px auto;
+}
+
+.login-info {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #7a4650;
+}
+
+.login-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.login-form input {
+  padding: 10px 15px;
+  border: 2px solid var(--rose-gold-glow);
+  outline: none;
+  font-size: 1rem;
+  color: var(--text-color);
+  width: 60%;
+}
+
+.login-form input:focus {
+  border-color: var(--rose-gold);
+}
+
+/* Barra de Ações */
+.actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid var(--rose-gold);
+  background-color: #ffffff;
+  color: var(--rose-gold);
+  box-shadow: 3px 3px 0px var(--rose-gold-glow);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #fcedf0;
+  transform: translateY(-2px);
+  box-shadow: 3px 5px 0px var(--rose-gold);
+}
+
+.btn-primary {
+  background-color: #f7d6e0;
+  color: #7a4650;
+}
+
+.btn-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+  box-shadow: 3px 3px 0px #b1dfbb;
+}
+
+.btn-success:hover {
+  background-color: #c3e6cb;
+  box-shadow: 3px 5px 0px #9fcdab;
+}
+
+/* Mensagens de Status */
+.msg-status {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.msg-erro {
+  color: var(--status-attention);
+}
+
+.msg-sucesso {
+  color: var(--status-good);
+}
+
+/* Edição de Tabela */
+.input-edicao {
+  width: 65px;
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.input-edicao.invalido {
+  border: 2px solid var(--status-attention);
+  background-color: #fdf2f2;
 }
 
 /* Responsividade para Celulares */
@@ -163,5 +266,18 @@ tr:hover {
   th, td {
     padding: 8px 10px;
     font-size: 0.85rem;
+  }
+
+  .login-form {
+    flex-direction: column;
+  }
+
+  .login-form input {
+    width: 100%;
+  }
+
+  .actions-bar {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
